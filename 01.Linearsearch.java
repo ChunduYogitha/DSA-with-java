@@ -80,5 +80,64 @@ output
     Enter target : 44
     Found target 44 - 2 index
 
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+3)Linear search using boolean
+    
+import java.util.Scanner;
+class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter array size : ");
+        int n = sc.nextInt();
+        System.out.println("Enter "+n+" Values");
+        int[] arr = new int[n];
+        for(int i=0;i<n;i++){
+            arr[i]= sc.nextInt();
+        }
+        System.out.println("Printing array : ");
+        for(int i=0;i<n;i++){
+            System.out.println(arr[i]+" ");
+        }
+        System.out.print("Enter target ");
+        int target = sc.nextInt();
+        
+        boolean b = linearSearch(arr,target);
+        if(b){
+            System.out.println("Found target at "+target+" index");
+        }
+        else{
+            System.out.println("Not Found");
+        }
+    }
+    static boolean linearSearch(int[] arr , int target){
+        if(arr.length == 0)
+            return false;
+        for(int i=0; i < arr.length ; i++){
+            //check for element at every index if it is = target 
+            int element = arr[i] ;
+            if(element == target){
+                return true ;
+            }
+            }
+        return false;
+    }
+}
 
+output
+    Enter array size : 5
+    Enter 5 Values
+    23
+    35
+    61
+    57
+    92
+    Printing array : 
+    23 
+    35 
+    61 
+    57 
+    92 
+    Enter target 61
+    Found target at 61 index
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
